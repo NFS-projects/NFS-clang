@@ -345,6 +345,16 @@ set_target_properties(clangStaticAnalyzerFrontend PROPERTIES
 list(APPEND _IMPORT_CHECK_TARGETS clangStaticAnalyzerFrontend )
 list(APPEND _IMPORT_CHECK_FILES_FOR_clangStaticAnalyzerFrontend "${_IMPORT_PREFIX}/lib/libclangStaticAnalyzerFrontend.a" )
 
+# Import target "clangSymbolGraph" for configuration "Release"
+set_property(TARGET clangSymbolGraph APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
+set_target_properties(clangSymbolGraph PROPERTIES
+  IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE "CXX"
+  IMPORTED_LOCATION_RELEASE "${_IMPORT_PREFIX}/lib/libclangSymbolGraph.a"
+  )
+
+list(APPEND _IMPORT_CHECK_TARGETS clangSymbolGraph )
+list(APPEND _IMPORT_CHECK_FILES_FOR_clangSymbolGraph "${_IMPORT_PREFIX}/lib/libclangSymbolGraph.a" )
+
 # Import target "clangFormat" for configuration "Release"
 set_property(TARGET clangFormat APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(clangFormat PROPERTIES
